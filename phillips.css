@@ -1,0 +1,98 @@
+*{ margin:0; padding:0;}
+
+html, body {  width:100%; height:100%;background:url(images/fondoazul.jpg) center center no-repeat; background-size:100%;color:#FFF;}
+
+#contenedor1{ display:block; width:100%; height:604px;  position:relative; }
+.contenedor2{background:url(images/fondovioleta.jpg) center center no-repeat; background-size:100%;}
+
+.fontbold{font-family: 'centrale_sans_boldregular';}
+
+.fontxbold{font-family: 'centrale_sans_xboldregular';}
+
+#contenedordecajas{ display:block; width:966px; height:604px; left:50%; margin-left:-483px; position:relative;}
+
+#comienzo{ display:block; width:966px; height:604px; position:relative;left:50%; margin-left:-483px;}
+
+.primera{ background:url(images/page1.png) center center no-repeat;}
+
+.segunda{background: url(images/page2.png) center center no-repeat;}
+
+a.btcomenzar{ display:block; width:410px; height:110px; background:url(images/bt_comenzar.png) no-repeat; position:absolute; left:50%; margin-left:-205px; bottom:50px;}
+a.btcomenzar:hover{opacity:0.4; filter:alpha(opacity=40);}
+
+a.btvolvercomenzar{ display:block; width:600px; height:110px; background: url(images/bt_volveracomenzar.png) no-repeat; position:absolute; left:50%; margin-left:-300px; bottom:50px;}
+a.btvolvercomenzar:hover{opacity:0.4; filter:alpha(opacity=40);}
+
+.basepreguntas{ background:url(images/pantalla_preguntas.png) center center no-repeat;}
+
+.puntosacumulados{
+	display: block;
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	font-size: 60px;
+	line-height: 50px;
+	left: 842px;
+	top: 52px;
+}
+
+a.btmito{
+	display: block;
+	width: 230px;
+	height: 70px;
+	background: url(images/mito.png) top center no-repeat;
+	position: absolute;
+	bottom: 35px;
+	left: 228px;
+}
+a.btmito:hover{  background:url(images/mito.png) bottom center no-repeat;}
+
+a.btverdad{
+	display: block;
+	width: 230px;
+	height: 70px;
+	background: url(images/verdad.png) top center no-repeat;
+	position: absolute;
+	bottom: 35px;
+	left: 473px;
+}
+a.btverdad:hover{  background:url(images/verdad.png) bottom center no-repeat;}
+
+.correcto{ background: url(images/correcto.png) center center no-repeat;}
+.ups{ background: url(images/ups.png) center center no-repeat;}
+.sumaste{
+	display: block;
+	width: 966px;
+	height: 100px;
+	left: 50%;
+	margin-left: -483px;
+	font-size: 75px;
+	text-align: center;
+	position: absolute;
+	top: 335px;
+}
+
+.superaste{ background: url(images/superaste.png) center center no-repeat;}
+.elegipremio{ background: url(images/encendetupremio.png) center center no-repeat;}
+
+.limpiar{ clear:both;}
+
+
+.bombitaspremios{display:block; width:870px; height:320px; position:absolute; left:50%; margin-left:-435px; top:250px;}
+a.bombitas{ display:block; width:280px; height:320px; margin-left:5px; margin-right:5px; float:left; position:relative;}
+a.bombitas:hover{opacity:0.6; filter:alpha(opacity=60);}
+.bombita1{ background:url(images/bulbo1.png) no-repeat;}
+.bombita2{background:url(images/bulbo1.png) no-repeat;}
+.bombita3{background:url(images/bulbo1.png) no-repeat;}
+
+.bombitaspremioresuelto{display:block; width:870px; height:396px; position:absolute; left:50%; margin-left:-435px; top:200px;}
+
+.bombitas2{ display:block; width:280px; height:396px; margin-left:5px; margin-right:5px; float:left; position:relative;}
+
+.diezporc{ background:url(images/10porciento.png) no-repeat;}
+.veinteporc{ background:url(images/20porciento.png) no-repeat;}
+.treintaporc{ background:url(images/30porciento.png) no-repeat;}
+
+.premiodiez{ background: url(images/ganaste10porciento.png) center center no-repeat;}
+.premioveinte{ background: url(images/ganaste20porciento.png) center center no-repeat;}
+.premiotreinta{ background: url(images/ganaste30porciento.png) center center no-repeat;}
