@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8" />
 <title>Phillips</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -9,17 +9,325 @@
 <meta name="viewport" content="width=device-width" />
 <link rel="stylesheet"  href="phillips.css" type="text/css" charset="utf-8" />
 <link rel="stylesheet" href="fonts/fonts.css" type="text/css" charset="utf-8" />
+<script type="text/javascript" src="js/panino.js"></script>
+<script type="text/javascript" src="js/comunes.js"></script>
+<script type="text/javascript" src="js/paninoAJAX.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/transicion.js"></script>
+<script>
+//luego ver de dónde sale ns.tipo, ahora: hardcode
+ns.tipo='retail';
+ns.preguntas_retail=[
+	{//1
+	'pregunta':'Durante octubre de 2015 podes cambiar las lámparas de tu casa por lámparas LEDBulb Philips por menos de:',
+	'a':'$6 x año durante 15 años de duración',
+	'b':'$ 60 x año durante 8 años de duración',
+	'c':'$120 x año durante 30 años de duración',
+	'corecta':'a'
+	},
+	{//2
+	'pregunta':'Las lámparas LED Philips ahorran:',
+	'a':'Hasta 30 % de energía',
+	'b':'Hasta 60 % de energía',
+	'c':'Hasta 90 % de energía',
+	'corecta':'c'
+	},
+	{//3
+	'pregunta':'¿Cómo es el cambio de una lámpara convencional a una lámpara LED Philips en un artefacto de iluminación?',
+	'a':'Se necesita adaptar el artefacto de iluminación',
+	'b':'Hay que colocar un suplemento a la lámpara LED',
+	'c':'El reemplazo es directo',
+	'corecta':'c'
+	},
+	{//4
+	'pregunta':'¿Cómo es el tamaño de las lámparas LED Philips en relación a las convencionales?',
+	'a':'Son Iguales a las lámparas convencionales',
+	'b':'Son más chicas a las lámparas convencionales',
+	'c':'Son más grandes a las lámparas convencionales',
+	'corecta':'a'
+	},
+	{//5
+	'pregunta':'¿Qué significa la sigla LED en español?',
+	'a':'Diodo Emisor de Luz',
+	'b':'Luz Emitida Directa',
+	'c':'Dar Luz en Espacios',
+	'corecta':'a'
+	},
+	{//6
+	'pregunta':'¿Qué equivalencias de lámparas LED Philips hay disponibles para el reemplazo de los bulbos tradicionales?',
+	'a':'40, 60, 75 y 100 watts',
+	'b':'60 y 100 watts',
+	'c':'Únicamente 40 watts',
+	'corecta':'a'
+	},
+	{//7
+	'pregunta':'Las lámparas LEDBulb Philips poseen la misma base que las lámparas convencionales:',
+	'a':'Sí',
+	'b':'No',
+	'corecta':'a'
+	},
+	{//8
+	'pregunta':'Las lámparas LED Philips:',
+	'a':'Emiten más calor que las lámparas tradicionales',
+	'b':'Emiten el mismo calor que las lámparas tradicionales',
+	'c':'Emiten calor pero en una cantidad significativamente menor que las lámparas tradicionales',
+	'corecta':'c'
+	},
+	{//9
+	'pregunta':'¿Cuántas horas dura encendida una lámpara LEDBulb Philips?',
+	'a':'1000 hs.',
+	'b':'9000 hs.',
+	'c':'15000 hs.',
+	'corecta':'c'
+	},
+	{//10
+	'pregunta':'¿Cuántas horas dura encendida una lámpara LEDBulb Philips?',
+	'a':'50.000 veces',
+	'b':'15.000 veces',
+	'c':'5.000 veces',
+	'corecta':'a'
+	},
+	{//11
+	'pregunta':'¿Cuál de las siguientes lámparas puede ser reemplazada por la LEDBulb Philips?',
+	'a':'Dicroica',
+	'b':'Incandescente Standard',
+	'c':'Halógena',
+	'corecta':'b'
+	},
+	{//12
+	'pregunta':'¿Cómo es el encendido de una lámpara LEDBulb Philips?',
+	'a':'Instantáneo',
+	'b':'Tarda 5 segundos en encender',
+	'c':'Tarda 10 segundos en encender',
+	'corecta':'a'
+	},
+	{//13
+	'pregunta':'¿Cuál de las siguientes lámparas puede ser reemplazada por la LED 4.5W GU10?',
+	'a':'Incandescente Standard',
+	'b':'Dicroica 50W',
+	'c':'Halógena',
+	'corecta':'b'
+	},
+	{//14
+	'pregunta':'¿Por qué son más eficientes las lámparas LED Philips?',
+	'a':'Porque el encendido es instantáneo',
+	'b':'Porque consumen menos e iluminan más',
+	'c':'Porque la base es la misma que las lámparas convencionales',
+	'corecta':'b'
+	},
+	{//15
+	'pregunta':'¿En qué temperaturas de color se ofrece la lámpara LEDBulb Philips?',
+	'a':'2200 K calido y 6000 K frio',
+	'b':'2700 K cálido y 5000 K frio',
+	'c':'3000 K cálido y 6500 K frío',
+	'corecta':'c'
+	}	
+];
+ns.preguntas_me=[
+	{//1
+	'pregunta':'¿Qué incidencia tiene la cantidad de chips LED en el flujo lumínico?',
+	'a':'A mayor cantidad de chips, mayor flujo lumínico',
+	'b':'No hay relación directa entre la cantidad de chips y el flujo lumínico',
+	'c':'El flujo lumínico depende de la aplicación de la lámpara',
+	'corecta':'b'
+	},
+	{//2
+	'pregunta':'Si una lámpara dicroica convencional, que consume 50w, es reemplazada por una lámpara dicroica MasterLED Philips, ¿qué porcentaje de ahorro de energía brinda?',
+	'a':'Reemplazo por una lámpara dicroica MasterLED Philips de 6w, con un AHORRO de ENERGIA del 88%',
+	'b':'Reemplazo por una lámpara dicroica MasterLED Philips de 12w, con un AHORRO de ENERGIA del 76%',
+	'c':'Reemplazo por una  lámpara dicroica MasterLED Philips de 23w, con un AHORRO de ENERGIA del 54%',
+	'corecta':'a'
+	},
+	{//3
+	'pregunta':'¿Qué criterios se consideran para determinar la vida útil de una Lámpara LED Philips?',
+	'a':'Consumo',
+	'b':'Mantenimiento de flujo lumínico',
+	'c':'Cantidad de Watts de la lámpara',
+	'corecta':'b'
+	},
+	{//4
+	'pregunta':'¿En qué tipo de aplicación recomendaría la utilización de lámparas LED Philips?',
+	'a':'Para luz acentuada con pocas horas de uso',
+	'b':'Para espacios con mucha luz exterior',
+	'c':'En todo tipo de aplicación',
+	'corecta':'c'
+	},
+	{//5
+	'pregunta':'El IRC que proporcionan las lámparas LED Philips es:',
+	'a':'Mayor que las lámparas de bajo consumo',
+	'b':'Menor que las lámparas de bajo consumo',
+	'c':'Igual a las lámparas de bajo consumo',
+	'corecta':'a'
+	},
+	{//6
+	'pregunta':'Para instalar una lámpara LED Philips AR111 de 10 watts, que ilumina por 50 Watts, se debe utilizar:',
+	'a':'Un transformador Philips para lámparas LED de 30 watts',
+	'b':'Un transformador Philips para lámparas LED de 10 watts',
+	'c':'Un transformador Philips para lámparas LED de 150 watts',
+	'corecta':'b'
+	},
+	{//7
+	'pregunta':'¿Cuántas veces se puede encender en promedio una lámpara LED Philips?',
+	'a':'50.000 veces',
+	'b':'15.000 veces',
+	'c':'5.000 veces',
+	'corecta':'a'
+	},
+	{//8
+	'pregunta':'Los Tubos fluorescentes Standard 36 watts que miden 1.200 mm son del mismo largo que los Tubos fluorescentes LED Philips de 19 watts:',
+	'a':'Sí',
+	'b':'No, tienen 20 mm. más',
+	'c':'No, tienen 10 mm. más',
+	'corecta':'a'
+	},
+	{//9
+	'pregunta':'Hay lámparas dicroicas LED Philips que pueden ser conectadas directamente a 220 V sin trasformador:',
+	'a':'No',
+	'b':'Sí',
+	'c':'Depende de la cantidad de Watts',
+	'corecta':'b'
+	},
+	{//10
+	'pregunta':'Además del Ahorro de energía, ¿qué otro beneficio se obtiene con un recambio a Tubos LED Philips?',
+	'a':'Iluminación enfocada',
+	'b':'Alto rendimiento de regulación',
+	'c':'Reducción de costos por mantenimiento',
+	'corecta':'c'
+	},
+	{//11
+	'pregunta':'¿Se puede reemplazar la lámpara Halógena AR 111 LED de 75 watts por una LED Philips de 15 watts con el mismo flujo lumínico?',
+	'a':'No',
+	'b':'Se necesita hacer una pequeña adaptación al artefacto',
+	'c':'Sí',
+	'corecta':'c'
+	},
+	{//12
+	'pregunta':'¿Cuál de las siguientes lámparas puede ser reemplazada por la MASTER LEDSpot GU10?',
+	'a':'Dicroica 50W',
+	'b':'Incadescente Standard 40W',
+	'c':'Halógena TwistLine 35/50W',
+	'corecta':'a'
+	},
+	{//13
+	'pregunta':'¿Cuántas horas dura encendida una lámpara MASTER LEDspot GU10 4W y 6W /220V?',
+	'a':'40000 horas',
+	'b':'20000 horas',
+	'c':'7000 horas',
+	'corecta':'a'
+	},
+	{//14
+	'pregunta':'¿Cuántos modelos de MASTER LEDtube T8 STD ofrece Philips?',
+	'a':'4',
+	'b':'2',
+	'c':'1',
+	'corecta':'b'
+	},
+	{//15
+	'pregunta':'¿Cómo es la reproducción de color de los MASTER LEDtube respecto de los fluorescentes tradicionales?',
+	'a':'Mejor',
+	'b':'Peor',
+	'c':'Igual',
+	'corecta':'a'
+	}
+];
+ns.preguntas=[];
+function getPage(p,callback){
+		request(
+			p,
+			function(r){
+				$('contentapp').innerHTML=r;
+				if(typeof callback=='function'){
+					callback();
+				}
+			},
+			{}
+		);
+}
+function getRandomInt(min, max) {
+    	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function inArray(needle, haystack) {
+    var length = haystack.length;
+    for(var i = 0; i < length; i++) {
+        if(haystack[i] == needle) return true;
+    }
+    return false;
+}
+function getPreguntas(){
+	ns.preguntas=[];
+	var grupo=ns['preguntas_'+ns.tipo],pa;
+	while(ns.preguntas.length<3){
+		pa=grupo[getRandomInt(0, 14)];
+		if(!inArray(pa,ns.preguntas)){
+			ns.preguntas.push(pa);
+		}
+	}
+	
+}
+function evaluar(rta){
+	if(rta==ns.preguntaActual['corecta']){
+		var c=0;
+		var nro=3-ns.preguntas.length;
+		if(nro==3){
+			c=fin;
+		}
+		 getPage('correcto'+nro+'.html',c);
+	}else{
+		 getPage('ups.html');
+	}
+}
+function fin(){
+	setTimeout(
+		function(){getPage('treintapremio.html');	},
+		1000
+	);
+}
+function setPregunta(){
+	$('lapregunta').innerHTML=ns.preguntaActual['pregunta'];
+	$('opcion1').style.display=$('opcion2').style.display=$('opcion3').style.display='none';
+	$('bta').style.display=$('btb').style.display=$('btc').style.display='none';
+	if(ns.preguntaActual.hasOwnProperty('a')){
+		$('opcion1').style.display='block';
+		$('opcion1').innerHTML='A) '+ns.preguntaActual['a'];
+		$('bta').style.display='block';
+	}
+	if(ns.preguntaActual.hasOwnProperty('b')){
+		$('opcion2').style.display='block';
+		$('opcion2').innerHTML='B) '+ns.preguntaActual['b'];
+		$('btb').style.display='block';
+	}
+	if(ns.preguntaActual.hasOwnProperty('c')){
+		$('opcion3').style.display='block';
+		$('opcion3').innerHTML='C) '+ns.preguntaActual['c'];
+		$('btc').style.display='block';
+	}
+}
+function siguientePregunta(){
+	if(ns.preguntas.length<1){
+		getPage('treintapremio.html')
+		return;
+	}
+	ns.preguntaActual=ns.preguntas.shift();
+	var nro=3-ns.preguntas.length;
+	getPage('pregunta'+nro+'.html',setPregunta);
+}
+DR(
+   function(){
+	   getPreguntas();
+   }
+);
+</script>
+
 </head>
 
 <body>
+<div id="contentapp">
 <div id="contenedor1">
 <div id="contenedordecajas">
-
 <div id="comienzo" class="primera">
-<a href="pantalla2.html" class="btcomenzar"></a>
+<div onClick="getPage('pantalla2.html');" class="btcomenzar"></div>
 </div>
-
-
+</div>
 </div>
 </div>
 </body>

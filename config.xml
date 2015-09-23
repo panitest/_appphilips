@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phillips.mobile"
+        id        = "com.phillipsingreso.mobile"
         version   = "1.0.0">
 
-    <name>Phillips</name>
+    <name>Phillips Ingreso</name>
 
     <description>
-        Phillips.
+        Phillips Ingreso.
     </description>
 
     <author href="http://www.disegnocentell.com.ar" email="mobius@disegnocentell.com.ar">
