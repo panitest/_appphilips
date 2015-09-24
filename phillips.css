@@ -19,20 +19,20 @@ html, body {  width:100%; height:100%;background:url(images/fondoazul.jpg) cente
 .segunda{background: url(images/page2.png) center center no-repeat;}
 
 .btcomenzar{ display:block; width:410px; height:110px;  position:absolute; left:50%; margin-left:-205px; bottom:50px; background: url(images/bt_comenzar.png) no-repeat;}
-.btcomenzar:hover{opacity:0.4; filter:alpha(opacity=40);}
+
 
 .btcomenzar2{ display:block; width:966px; height:176px;  position:absolute; left:50%; margin-left:-483px; bottom:20px; }
-.btcomenzar2:hover{opacity:0.4; filter:alpha(opacity=40);}
+
 
 .diez{background:url(images/participas_10.png) no-repeat;}
 .veinte{background:url(images/participas_20.png) no-repeat;}
 .treinta{background:url(images/participas_30.png) no-repeat;}
 
 .btvolvercomenzar{ display:block; width:600px; height:70px; background: url(images/bt_volveracomenzar.png) center bottom no-repeat; position:absolute; left:50%; margin-left:-300px; bottom:50px;}
-.btvolvercomenzar:hover{opacity:0.4; filter:alpha(opacity=40);}
+
 
 .btvolvercomenzar2{ display:block; width:600px; height:110px; background: url(images/bt_volveracomenzar2.png) center center no-repeat; position:absolute; left:50%; margin-left:-300px; bottom:50px;}
-.btvolvercomenzar2:hover{opacity:0.4; filter:alpha(opacity=40);}
+
 
 .puntosacumulados{
 	display: block;
@@ -54,7 +54,7 @@ html, body {  width:100%; height:100%;background:url(images/fondoazul.jpg) cente
 	bottom: 35px;
 	left: 228px;
 }
-.btmito:hover{  background:url(images/mito.png) bottom center no-repeat;}
+
 
 .btverdad{
 	display: block;
@@ -65,7 +65,7 @@ html, body {  width:100%; height:100%;background:url(images/fondoazul.jpg) cente
 	bottom: 35px;
 	left: 473px;
 }
-.btverdad:hover{  background:url(images/verdad.png) bottom center no-repeat;}
+
 
 .correcto{ background: url(images/correcto1.png) center center no-repeat;}
 .correcto2{ background: url(images/correcto2.png) center center no-repeat;}
@@ -91,7 +91,7 @@ html, body {  width:100%; height:100%;background:url(images/fondoazul.jpg) cente
 
 .bombitaspremios{display:block; width:870px; height:320px; position:absolute; left:50%; margin-left:-435px; top:250px;}
 .bombitas{ display:block; width:280px; height:320px; margin-left:5px; margin-right:5px; float:left; position:relative;}
-.bombitas:hover{opacity:0.6; filter:alpha(opacity=60);}
+
 .bombita1{ background:url(images/bulbo1.png) no-repeat;}
 .bombita2{background:url(images/bulbo1.png) no-repeat;}
 .bombita3{background:url(images/bulbo1.png) no-repeat;}
@@ -126,7 +126,7 @@ border-radius: 10px; padding:0 30px 10px 30px;}
 	bottom: 0px;
 	left: 33px;
 }
-.elegia:hover{  background:url(images/elijo-opcion-A.png) bottom center no-repeat;}
+
 
 .elegib{
 	display: block;
@@ -137,7 +137,7 @@ border-radius: 10px; padding:0 30px 10px 30px;}
 	bottom: 0px;
 	left: 333px;
 }
-.elegib:hover{  background:url(images/elijo-opcion-B.png) bottom center no-repeat;}
+
 
 .elegic{
 	display: block;
@@ -148,9 +148,10 @@ border-radius: 10px; padding:0 30px 10px 30px;}
 	bottom: 0px;
 	left: 633px;
 }
-.elegic:hover{  background:url(images/elijo-opcion-C.png) bottom center no-repeat;}
+
 
 #respuA{ display:inline-block;}
 #respuB{ display:inline-block;}
 #respuC{ display:inline-block;}
 
+.finale{ background: url(images/finale.png) center center no-repeat;}
